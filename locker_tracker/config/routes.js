@@ -23,16 +23,12 @@
 module.exports.routes = {
 
   '/': {
-    view: 'homepage'
+    view: 'auth/login'
   },
 
-  'GET /login': {
-      controller: 'AuthController',
-      action: 'login'
-  },
   'POST /login': {
       controller: 'AuthController',
-      action: 'process'
+      action: 'login'
   },
   'GET /logout': {
       controller: 'AuthController',
@@ -49,7 +45,7 @@ module.exports.routes = {
     action: 'create'
   },
 
-  'GET /welcome': {
+  'GET /user': {
       controller: 'UserController',
       action: 'index'
   },
@@ -57,5 +53,15 @@ module.exports.routes = {
   'GET /lockers': {
     controller: 'LockerController',
     action: 'index'
+  },
+
+  'GET /lockers/:id': {
+    controller: 'LockerController',
+    action: 'edit'
+  },
+
+  'POST /lockers/:id': {
+    controller: 'LockerController',
+    action: 'update'
   }
 };
