@@ -7,6 +7,34 @@
 
 module.exports = {
 	index: function(req, res) {
-		res.view();
+		Locker.find().sort('id ASC').exec(function (err, lockers) {
+			return res.view({ lockers: lockers});
+		});
+	},
+
+	edit: function(req, res) {
+		Locker.findOne().where({'id': req.param('id')}).exec(function (err, locker) {
+			return res.view({locker: locker});
+		});
+	},
+
+	update: function(req, res) {
+		var updateHash = {};
+		var status = req.param('status');
+		var lockerCombination = req.param('lockerCombination');
+		var note = req.param('note');
+		updateHash['status'] = status;
+
+		if(lockerCombination.length > 0) {
+			updateHash['lockerCombination'] = lockerCombination;
+		}
+
+		if(note.length > 0) {
+			updateHash['note'] = note;
+		}
+
+		Locker.update({id: req.param('id')}, updateHash).exec(function afterwards(err, updated) {
+			return res.redirect('/lockers');
+		});
 	}
 };
