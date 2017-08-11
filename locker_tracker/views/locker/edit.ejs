@@ -1,0 +1,15 @@
+<div class="">
+  <form class="" action="/lockers/<%= locker.id%>" method="post">
+    <label for="status">Status</label>
+    <select class="" name="status" required>
+      <option value="" disabled selected>Select Status</option>
+      <option value="VACANT">VACANT</option>
+      <option value="OCCUPIED">OCCUPIED</option>
+    </select>
+    <label for="lockerCombination">Combination</label>
+    <input type="text" name="lockerCombination" value="" placeholder="<%= locker.lockerCombination%>">
+    <label for="note">Note</label>
+    <textarea name="note" rows="8" cols="80"><% if(locker.note != null) { locker.note } %></textarea>
+    <button type="submit" name="button">submit</button>
+  </form>
+</div>
