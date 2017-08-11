@@ -5,34 +5,6 @@
 
     <!-- Viewport mobile tag for sensible mobile support -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-    <!--STYLES-->
-    <link rel="stylesheet" href="/styles/importer.css">
-    <!--STYLES END-->
-  </head>
-
-  <body>
-    <div class="container">
-
-      <% if (req.session.me) { %>
-      <a href="/logout">Logout</a>
-      <% } else { %>
-
-      <div class="header">
-        Locker Tracker
-      </div>
-
-      <div class="login-container">
-        <form action="/login" method="post">
-          <input name="email" type="text" placeholder="email"/>
-          <br/>
-          <input name="password" type="password" placeholder="password"/>
-          <br/>
-          <button id="submit" type="submit">Login</button>
-        </form>
-      </div>
-      <% } %>
-    </div>
     <!--SCRIPTS-->
     <script src="/js/dependencies/sails.io.js"></script>
     <!--SCRIPTS END-->
