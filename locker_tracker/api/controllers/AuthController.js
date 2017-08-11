@@ -10,16 +10,13 @@
  module.exports = {
 
      login: function(req, res) {
-         res.view();
-     },
-     process: function(req, res) {
          passport.authenticate('local', function(err, user, info) {
              if( (err)||(!user) ) {
-                 return res.redirect('/');
+                 return res.redirect('/user');
              }
              req.logIn(user, function(err) {
                  if(err) res.send(err);
-                 return res.redirect('/welcome');
+                 return res.redirect('/user');
              });
          }) (req, res);
      },
