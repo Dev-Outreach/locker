@@ -8,7 +8,7 @@
 module.exports = {
 
   index: function(req, res) {
-      res.view();
+      res.view({ firstName: req.user[0].firstName });
   },
 
   signup: function(req, res) {
@@ -24,7 +24,7 @@ module.exports = {
       }).exec(function (err, user) {
         if (err) { return res.serverError(err); }
 
-        return res.redirect('/login');
+        return res.redirect('/user');
       });
   }
 
