@@ -1,7 +1,7 @@
 query_head = 'INSERT INTO lockers ("lockerNumber", "location", "lockerCombination", "status", "lockerComposite", "createdAt", "updatedAt") VALUES '
 
 combination = '12 34 56'
-status = 'PENDING'
+status = 'VACANT'
 time_stamp = 'now()'
 
 open('locker_tracker_dev.sql', 'w') { |f|
