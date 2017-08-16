@@ -12,6 +12,16 @@ module.exports = {
 		});
 	},
 
+	new: function(req, res) {
+		res.view();
+	},
+
+	create: function(req, res) {
+		Locker.create(req('user')).exec(function afterwards(err, created) {
+			return res.redirect('/lockers');
+		});
+	},
+
 	edit: function(req, res) {
 		Locker.findOne().where({'id': req.param('id')}).exec(function (err, locker) {
 			return res.view({locker: locker});
@@ -34,6 +44,12 @@ module.exports = {
 		}
 
 		Locker.update({id: req.param('id')}, updateHash).exec(function afterwards(err, updated) {
+			return res.redirect('/lockers');
+		});
+	},
+
+	destroy: function(req, res) {
+		Locker.destroy({id: req.param('id')}).exec(function afterwards(err, destroyed) {
 			return res.redirect('/lockers');
 		});
 	}

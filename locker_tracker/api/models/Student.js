@@ -1,56 +1,42 @@
 /**
- * Locker.js
+ * Student.js
  *
  * @description :: TODO: You might write a short summary of how this model works and what it represents here.
  * @docs        :: http://sailsjs.org/documentation/concepts/models-and-orm/models
  */
 
 module.exports = {
-  tableName: 'lockers',
+  tableName: 'students',
 
   attributes: {
-    lockerNumber: {
+    firstName: {
       type: 'string',
       required: true
     },
 
-    location: {
+    lastName: {
       type: 'string',
       required: true
     },
 
-    lockerCombination: {
-      type: 'string'
-    },
-
-    status: {
+    studentId: {
       type: 'string',
-      required: true,
-      enum: ['VACANT', 'OCCUPIED'],
-      defaultsTo: 'VACANT'
+      required: true
     },
 
-    note: {
-      type: 'string'
-    },
-
-    lockerComposite: {
+    grade: {
       type: 'string',
-      unique: true
+      required: true
     },
 
-    student: { model: 'Student'},
+    dob: {
+      type: 'date'
+    },
 
     toJSON: function() {
     var obj = this.toObject();
     delete obj.password;
     return obj;
     }
-  },
-
-  beforeValidation : function(values,cb) {
-    values.lockerComposite = values.lockerNumber+'-'+values.location;
-    cb();
   }
-
 };

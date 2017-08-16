@@ -55,13 +55,58 @@ module.exports.routes = {
     action: 'index'
   },
 
-  'GET /lockers/:id': {
+  'GET /lockers/new': {
+    controller: 'LockerController',
+    action: 'new'
+  },
+
+  'POST /lockers/create': {
+    controller: 'LockerController',
+    action: 'create'
+  },
+
+  'GET /lockers/:id/edit': {
     controller: 'LockerController',
     action: 'edit'
   },
 
-  'POST /lockers/:id': {
+  'POST /lockers/:id/update': {
     controller: 'LockerController',
     action: 'update'
+  },
+
+  'POST /lockers/:id/destroy': {
+    controller: 'LockerController',
+    action: 'destroy'
+  },
+
+  'GET /students': {
+    controller: 'StudentController',
+    action: 'index'
+  },
+
+  'GET /students/new': {
+    controller: 'StudentController',
+    action: 'new'
+  },
+
+  'POST /students/create': {
+    controller: 'StudentController',
+    action: 'create'
+  },
+
+  'GET /students/:id/edit': {
+    controller: 'StudentController',
+    action: 'edit'
+  },
+
+  'POST /students/:id/update': {
+    controller: 'StudentController',
+    action: 'update'
+  },
+
+  'POST /students/:id/destroy': {
+    controller: 'StudentController',
+    action: 'destroy'
   }
 };
