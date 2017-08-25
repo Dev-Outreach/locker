@@ -30,8 +30,11 @@ module.exports = {
     },
 
     dob: {
-      type: 'date'
+      type: 'date',
+      required: true
     },
+
+    locker: { 'model': 'Locker' },
 
     toJSON: function() {
     var obj = this.toObject();

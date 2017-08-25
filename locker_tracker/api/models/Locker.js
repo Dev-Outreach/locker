@@ -20,7 +20,8 @@ module.exports = {
     },
 
     lockerCombination: {
-      type: 'string'
+      type: 'string',
+      defaultsTo: null
     },
 
     status: {
@@ -31,7 +32,8 @@ module.exports = {
     },
 
     note: {
-      type: 'string'
+      type: 'string',
+      defaultsTo: null
     },
 
     lockerComposite: {
@@ -39,7 +41,7 @@ module.exports = {
       unique: true
     },
 
-    student: { model: 'Student'},
+    student: { model: 'Student' },
 
     toJSON: function() {
     var obj = this.toObject();
