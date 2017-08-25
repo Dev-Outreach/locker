@@ -23,16 +23,17 @@
 module.exports.routes = {
 
   '/': {
-    view: 'auth/login'
+    controller: 'AuthController',
+    action: 'new'
   },
 
-  'POST /login': {
+  'POST /session/create': {
       controller: 'AuthController',
-      action: 'login'
+      action: 'create'
   },
-  'GET /logout': {
+  'POST /session/delete': {
       controller: 'AuthController',
-      action: 'logout'
+      action: 'delete'
   },
 
   'GET /signup': {
