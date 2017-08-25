@@ -7,7 +7,9 @@
 
 module.exports = {
 	index: function(req, res) {
-
+		Student.find().sort('id ASC').exec(function (err, students) {
+			return res.view({ students: students});
+		});
 	},
 
 	new: function(req, res) {
