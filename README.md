@@ -39,4 +39,4 @@ How to install Bootstrap
 
 How to run and view the application
   - `sails lift`
-  - in the browser, go to `localhost:5000`
+  - in the browser, go to `localhost:1337`
