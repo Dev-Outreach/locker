@@ -1,24 +1,42 @@
-# Locker Tracker System
- 
- The purpose of this program is to allow administrative staff to track the occupancy of the lockers in the
- school. This system will keep track of the lock combination on occupied lockers, whether a locker is
- unused, or if the locker have been flagged for the lock to be cut.
+*Locker Tracker*
 
- The information will be stored on a database server and accessed through a graphical interface. The
- interface will allow a user to search for lockers with different occupancy status, search by hallway and
- locker number, display a list of all the lockers and their information. As well the user will be able to
- delete, add, and update locker information through the interface.
+What it does
+  - main function is to manage the relationship between students and their assigned lockers
 
- The locker data will be stored in the database on a single table. It will have a Composite Key of two
- columns. The locker number and the hallway. I will also have additional columns of Combination and Status.
+How functionality can be expanded
+  - updates to user interface
+  - visually show lockers on a map
+  - comment on this repo with suggestions
 
- For the database, I am looking at using PostgreSQL database as it is open source. As for the backend of
- the project, I am looking to using Processing from processing.org.
- 
- ### Potential Problems
- There are some issues or problems that we may run into. One problem that may occur is if the software
- is unable to connect to the database. Another issue that we would have to handle is if there are more
- than one user trying to edit the same locker at the same time. The chances of this happening is very low
- but it is a problem that we have to watch out for none the less. The final problem we may have to take 
- care of is if the database automatically backs itself up at set time intervals and where to store the
- backups.
+Underlying technology
+  Application Framework (backend/server):
+    - sails.js v0.12 (sailsjs.com)
+  Database
+    - PostgreSQL 9.6.1 (postgresql.org)
+  CSS/Javascript Library (frontend)
+    - bootstrap v3.3 (getboostrap.com)
+
+How to install PostgreSQL
+  - if you're not using macOS, you will need to install PostgreSQL some other way (postgresql.org)
+  install homebrew via curl
+    - /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+  install PostgreSQL via homebrew
+   - `brew update` - this updates homebrew
+   - `brew doctor` - this cleans up any broken links within homebrew
+   - `brew install postgresql`
+
+How to install the Sails.js framework
+  - macOS based installation
+  - will most likely work on Ubuntu linux distribution
+  install node.js (nodejs.org)
+    - npm comes with node.js
+  install sails via npm
+    `npm install sails -g`
+    - might need to specify the version
+
+How to install Bootstrap
+  - the project comes with minified Bootstrap files in the `assets` directory
+
+How to run and view the application
+  - `sails lift`
+  - in the browser, go to `localhost:5000`
