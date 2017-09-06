@@ -9,7 +9,7 @@ How functionality can be expanded
   - comment on this repo with suggestions
 
 Underlying technology
-  Application Framework (backend/server):
+  Application Framework (backend/server)
     - sails.js v0.12 (sailsjs.com)
   Database
     - PostgreSQL 9.6.1 (postgresql.org)
