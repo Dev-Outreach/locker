@@ -1,0 +1,33 @@
+<div class="">
+  <table>
+    <thead>
+      <th>Locker</th>
+      <th>Combination</th>
+      <th>Status</th>
+      <th>Note</th>
+    </thead>
+    <tbody>
+      <% for(var i=0; i<lockers.length; i++) {%>
+        <tr>
+         <td>
+           <%= lockers[i].lockerComposite %>
+         </td>
+         <td>
+           <%= lockers[i].lockerCombination%>
+         </td>
+         <td>
+           <%= lockers[i].status%>
+         </td>
+         <td>
+           <% if(lockers[i].note != null) {%>
+            <%= lockers[i].note %>
+           <% }else { %>
+             *blank*
+             <% } %>
+         </td>
+         <td><a href="/lockers/<%= lockers[i].id%>"><button type="button" name="button">Edit</button></a></td>
+       </tr>
+      <% } %>
+    </tbody>
+  </table>
+</div>
